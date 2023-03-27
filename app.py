@@ -1,7 +1,7 @@
-import flask
+from flask import Flask, request, render_template
 
-app = flask.Flask(__name__)
+app = Flask(__name__)
 
-@app.route("/home")
+@app.route("/", methods=['GET'])
 def index():
-    return flask.render_template('index.html')
+    return render_template('index.html')
